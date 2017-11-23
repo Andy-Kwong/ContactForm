@@ -1,0 +1,54 @@
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+h1 {
+    text-align: center;
+}
+
+.contactInput {
+    width: 50%;
+}
+
+.addedContacts {
+    width: 50%;
+}
+
+h4 {
+    text-align: right;
+}
+
+.content {
+    margin: 1em 1.5em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card h2 {
+    font-size: 2em;
+}
+
+.cardBack {
+    display: none;
+
+}
+
+
+.cardBack h5 {
+    font-size: 1.25em;
+    font-style: bold;
+}
+
+.specific {
+    width: 250px;
+    height: 120px;
+    overflow-x: scroll;
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="ContactCard.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="skeleton.css">
+</head>
+<body>
+    <h1>Your Contact Form</h1>
+    <div class="wrapper">
+        <div class="contactInput content">
+            <h2>Add Contacts</h2>
+            <form>
+                First Name: <input type="text" placeholder="First Name" id="firstName">
+                Last Name: <input type="text" placeholder="Last Name" id="lastName">
+                Phone #: <input type="text" placeholder="Phone Number" id="phoneNumber">
+                Description: <textarea placeholder="Description" id="description"></textarea>
+                <input class="button" sudo-button-class="button-primary" type="submit" id="submitButton" value="Add User">
+            </form>
+        </div>
+        <div id="addedContacts" class="contact">
+            <h4>Added Contacts</h4>
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function() {
+
+        $("#submitButton").click(function() {
+            console.log("hello");
+            var firstName = $("#firstName").val();
+            var lastName = $("#lastName").val();
+            var phoneNumber = $("#phoneNumber").val();
+            var description = $("#description").val();
+            $("#addedContacts").append("<div class='specific'><div class='card'><h2>"+ firstName + " " + lastName + "</h2><p>See more</p></div><div class='cardBack'><h5>"+ firstName + " " + lastName + "</h5><p>" + description + "</p></div></div>");
+            return false;
+        })
+
+        $(document).on("click", ".specific", function(){
+            $(this).children().toggle();
+        });
+        $(document).on("hover", "input", function(){
+            $(this).attr("class", $(this).attr("sudo-button-class"))
+        })
+
+    })
+
+        function createCard() {
+                var firstName = $("#firstName").val();
+                var lastName = $("#lastName").val();
+                var phoneNumber = $("#phoneNumber").val();
+                var description = $("#description").val();
+                var cardFront = firstName + " " + lastName;
+                var cardBackTitle = firstName + " " + lastName;
+                var cardBackDescription = phoneNumber + " " + description;
+
+                console.log(cardFront);
+                console.log(cardBackTitle);
+                console.log(cardBackDescription);
+
+                return cardBackTitle;
+
+        }
+
+
+    </script>
+</body>
+</html>
